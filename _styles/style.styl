@@ -1,0 +1,327 @@
+//====================
+// import
+// ===================
+@import ("smart-grid.styl");
+@import ("settings.styl")
+
+//====================
+// code
+// ===================
+#app
+	max-width 1920px
+	margin 0 auto
+
+header
+	min-height 760px
+	position relative
+	flex-grow 0
+
+main
+	flex-grow 1
+
+footer
+	flex-grow 0
+
+.border
+			margin 15px
+			border-bottom: 10px solid $purple
+			width 110px
+			height 10px
+
+.text
+	font(54px,Montserrat,700,#262626)
+
+
+.wrapper
+	position absolute
+	width 100%
+	height 100%
+	background-image: url('../_img/headerbg.png');
+	min-height 760px
+	opacity 1
+	z-index 555
+
+.header
+	wrapper()
+	display flex
+	justify-content space-between
+	min-height 200px
+	align-items center
+	z-index 10
+	&__logo
+		font(58px,Montserrat,bold,#fff)
+		line-height 95px
+	&__navBar
+		display flex
+		padding 0
+		margin 0
+		a
+			padding 15px 35px
+			font(18px,PT Sans,500,#fff)
+			line-height 54px;
+			border-radius 35px
+			letter-spacing 0.06em
+			transition .3s
+			&:hover
+				background-color: $blue
+		.subMenu
+			position relative
+			transition .4s;
+			&:after
+				content ''
+				position absolute
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px 5px 0 5px;
+				border-color: #ffffff transparent transparent transparent;
+				left: 80%
+				top 24px
+		.is-active
+			background-color: $blue
+
+.header__content
+	width 100%
+	height calc(100% - 200px)
+	display flex
+	align-items center
+	justify-content center
+	flex-flow column wrap
+	&-h1
+		font(54px,Montserrat,bold,#fff)
+		line-height 63px
+		margin 5px 0
+	&-p
+		font(28px,PT Sans,400,#fff)
+		line-height 34px
+		margin 5px 0
+
+.features
+	min-height 1000px
+	background-color: #FFF
+	.features-wrapper
+		wrapper()
+		min-height 1000px
+		display flex
+		flex-flow column wrap
+		align-items center
+		justify-content center
+		&__h1
+			font(54px,Montserrat,bold,#000)
+			margin-top 50px
+			margin-bottom 15px
+		.border
+			margin 15px
+			border-bottom: 10px solid $purple
+			width 110px
+			height 10px
+
+.box-container
+	display flex;
+	width 100%
+	.features-wrapper__box
+		col-4()
+		display flex
+		flex-flow column wrap
+		justify-content center
+		align-items center
+		height 200px
+		margin-top 100px
+		.features__box-text
+			text-align center
+			margin-top auto
+			width: 50%
+			font(32px,Montserrat,400,$gray)
+
+.features-wrapper__buttons
+	display flex
+	margin-top 80px
+	&-button
+		border: 1px solid $blue
+		font(32px,Montserrat,400,$blue)
+		cursor pointer
+		margin 0 20px
+		padding: 15px 40px
+		border-radius 35px
+		&:hover
+			background-color: $blue
+			color: #fff
+
+.stat
+	min-height 420px
+	background-color: $purple
+	.stat-wrapper
+		wrapper()
+		min-height 420px
+		row-flex()
+		margin 0 auto
+		align-items center
+		justify-content space-around
+		.stat__box
+			display flex
+			flex-flow column wrap
+			text-align center
+			&-number
+				font(96px,Montserrat,800,#8776b7);
+			&-text
+				font(45px,Montserrat,400,#fff)
+				margin: 5px
+			.border
+				width: 160px
+				height 7px
+				border-bottom 2px solid #1da7ff
+				margin 15px auto
+
+.works
+	min-height 1050px
+	background-color #e5e5e5
+	&__text
+		display flex
+		flex-flow column wrap
+		align-items center
+		justify-content center
+		height 350px
+	&__text-h1
+		font(54px,Montserrat,700,#262626)
+	&__container
+		wrapper()
+		display flex
+		margin 0 auto
+		min-height 700px
+		&-cards
+			width 380px
+			height 438px
+			margin: 0 10px
+			box-shadow 0 11px 18px 1px rgba(76, 76, 76, 0.16)
+			border-radius 8px
+			border 1px solid #ebebeb
+			background-color #ffffff
+			transition .2s
+			&:hover
+				box-shadow 0 22px 63px 2px rgba(76, 76, 76, 0.29)
+				transform scaleX(1.05) scaleY(1.1)
+			.overview
+				display flex
+				flex-flow column wrap
+				justify-content center
+				padding: 35px 30px
+				.design
+					font(16px,PT Sans,500,#313131)
+					padding: 5px 0
+				.name
+					padding: 5px 0
+					font(26px,Montserrat,400,#313131)
+				.case
+					display flex
+					justify-content space-between
+					align-items center
+					span
+						font(18px,PT Sans,400,#191a1c)
+						font-style italic
+						position relative
+						&:after
+							content "\2192"
+							padding-left 7px
+
+
+.clients
+	background-color #fff
+	min-height 680px
+	&__text
+		wrapper()
+		display flex
+		align-items center
+		flex-flow column
+		justify-content center
+		height: 380px
+	&__marks
+		wrapper()
+		display flex
+		justify-content space-between
+		align-items center
+		margin-top 10px
+		.box
+			&:nth-child(3)
+				margin-left 10px
+
+.subscribe
+	background-color: $purple
+	min-height 346px
+	justify-content center
+	display flex
+	align-items center
+	flex-flow column wrap
+	&-text
+		font(32px,Montserrat,400,#fff)
+		margin-bottom 40px
+	.button-subscribe
+		position relative
+		input
+			height 50px
+			width 715px
+			border-radius 25px
+			padding-left: 50px
+			font(16px,Montserrat,300,#000)
+		.myButton
+			position absolute
+			background-color: $blue
+			border: none
+			height 50px
+			width 184px
+			border-radius 0 25px 25px 0
+			top 0px
+			right 0
+			z-index 5
+			padding: 0
+			font(16px,Montserrat,300,#fff)
+
+
+.firstFooter
+	min-height 420px
+	background-color: #27262e
+	.fwrapperOne
+		wrapper()
+		height 200px
+		display flex
+		justify-content space-between
+		align-items center
+		border-bottom: 1px solid rgba(255, 255, 255, .5)
+	&-socials
+		display flex
+		a
+			padding 0 20px
+			font-size: 24px
+			color #a3a1ac
+	&-logo
+		font(33px,Arial,bold,#fff)
+	.fwrapperTwo
+		height 220px
+		wrapper()
+		display flex
+		align-items center
+		justify-content space-between
+		.box
+			col-4()
+			row-flex()
+			align-items center
+			.contacts
+				padding-left 15px
+			h2
+				font(24px,Roboto,400,#fff)
+				margin 7px 0
+			p
+				font(16px,Roboto,400,#fff)
+				opacity: .45
+				margin 0
+
+.secondFooter
+	min-height 171px
+	background-color: #1c1b24
+	display flex
+	justify-content center
+	align-items center
+	font(24px,Roboto,400,#3e3c4d)
+	a
+		color: #fff
+		padding-left 10px
