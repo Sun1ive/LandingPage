@@ -24,12 +24,14 @@ const router = new VueRouter({
 
 Vue.component('app-post',{
 	data(){
-	return { email: '' }
+	return { 
+		email: '' 
+		}
 	},
 	template: `
 	<form class="button-subscribe" id="app">
 	<input type="email" placeholder="Your Email Adress" v-model="email">
-	<button class="myButton" @click="subForm">Subscribe</button>
+	<button class="myButton" @click.prevent="subForm">Subscribe</button>
 	</form>
 `,
 	methods: {
@@ -38,10 +40,6 @@ Vue.component('app-post',{
 		}
 	}
 });
-
-// const app = new Vue({
-// 	router
-// }).$mount('#app')
 
 new Vue({
 	el: '#wrapper',

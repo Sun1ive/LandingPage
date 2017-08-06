@@ -913,6 +913,26 @@ footer {
   padding-left: 10px;
 }
 
+.bounce-enter-active {
+  -webkit-animation: bounceIn 1s;
+  animation: bounceIn 1s;
+}
+
+.bounce-leave-active {
+  -webkit-animation: bounceIn 1s reverse;
+  animation: bounceIn 1s reverse;
+}
+
+.lowRes-enter-active {
+  -webkit-animation: bounceInRight 1.2s;
+  animation: bounceInRight 1.2s;
+}
+
+.lowRes-leave-active {
+  -webkit-animation: bounceInRight 1.2s reverse;
+  animation: bounceInRight 1.2s reverse;
+}
+
 @media screen and (max-width: 1100px) {
   .header {
     padding-left: 30px;

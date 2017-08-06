@@ -9,13 +9,19 @@
 <!-- <meta name="og:image" content="image"> -->
 <!-- Индексирует страницу -->
 <meta name="robots" content="index,follow">
+
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<link rel="stylesheet" href="_libs/animate.min.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
 <link rel="shortcut icon" href="_img/favicon.ico">
 <link rel="stylesheet" href="_libs/normalize.min.css">
+
 <link rel="stylesheet" href="_styles/style.min.css">
 </head>
 <body>
@@ -28,24 +34,28 @@
 			<div class="header__logo">logo</div>
 			<ul class="header__navBar">
 				<li><a href="#" class="subMenu" @click="solMenu = !solMenu">Solutions</a>
+				<transition name="bounce">
 					<ul class="solMenu" v-if="solMenu">
 						<li><a href="#">The</a></li>
 						<li><a href="#">Best</a></li>
 						<li><a href="#">Solution</a></li>
 						<li><a href="#">Delete</a></li>
 					</ul>
+				</transition>
 				</li>
 				<li><a href="#blog">Blog</a></li>
 				<li><a href="#about-us">About</a></li>
 				<li><a href="#">Request a Quote</a></li>
 			</ul>
 			<img src="https://cdn2.iconfinder.com/data/icons/ios-tab-bar/25/Hamburger_Round-64.png" alt="" @click="show = !show">
+			<transition name="lowRes">
 			<ul class="lowResMenu header__navBar" v-if="show">
 				<li><a href="#">Solutions</a></li>
 				<li><a href="#">Blog</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Request</a></li>
 			</ul>
+			</transition>
 		</div>
 		<div class="header__content">
 				<h1 class="header__content-h1">
