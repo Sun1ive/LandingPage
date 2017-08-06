@@ -7,7 +7,7 @@
 //====================
 // code
 // ===================
-#app
+#wrapper
 	max-width 1920px
 	margin 0 auto
 
@@ -15,6 +15,12 @@ header
 	min-height 760px
 	position relative
 	flex-grow 0
+
+.about
+	z-index 50
+	h1
+		margin 0
+		height 40px
 
 main
 	flex-grow 1
@@ -30,6 +36,7 @@ footer
 
 .text
 	font(54px,Montserrat,700,#262626)
+	sm(font-size, 35px)
 
 
 .wrapper
@@ -38,25 +45,55 @@ footer
 	height 100%
 	background-image: url('../_img/headerbg.png');
 	min-height 760px
-	opacity 1
-	z-index 555
 
 .header
+	position relative
 	wrapper()
 	display flex
 	justify-content space-between
 	min-height 200px
 	align-items center
-	z-index 10
+	img
+		display none
+		sm(display, block)
+		xxs(right, 25px)
+		xxs(top, 69px)
+		cursor: pointer
+		position absolute
+		right: 55px
+		top 65px
+	.lowResMenu
+		position absolute
+		right 4%
+		top 125px
+		display none
+		flex-flow column wrap
+		sm(right, 4%)
+		xs(right, 6%)
+		xxs(right, 0%)
+		sm(display,flex)
 	&__logo
 		font(58px,Montserrat,bold,#fff)
 		line-height 95px
+		sm(margin-left, 25px)
+		xxs(margin, 0)
 	&__navBar
 		display flex
 		padding 0
+		justify-content flex-end
+		align-items center
 		margin 0
+		sm(display, none)
+		li
+			position relative
+			.solMenu
+				position absolute
+				top 50px
+				left: 19px
+				padding 0
 		a
 			padding 15px 35px
+			sm(padding, 10px 20px)
 			font(18px,PT Sans,500,#fff)
 			line-height 54px;
 			border-radius 35px
@@ -78,11 +115,14 @@ footer
 				border-color: #ffffff transparent transparent transparent;
 				left: 80%
 				top 24px
+				sm(left, 90%)
+				sm(top, 20px)
 		.is-active
 			background-color: $blue
 
 .header__content
-	width 100%
+	col()
+	text-align center
 	height calc(100% - 200px)
 	display flex
 	align-items center
@@ -92,10 +132,13 @@ footer
 		font(54px,Montserrat,bold,#fff)
 		line-height 63px
 		margin 5px 0
+		xs(font-size, 36px)
+		xs(line-height, 45px)
 	&-p
 		font(28px,PT Sans,400,#fff)
 		line-height 34px
 		margin 5px 0
+		xs(font-size, 20px)
 
 .features
 	min-height 1000px
@@ -103,14 +146,17 @@ footer
 	.features-wrapper
 		wrapper()
 		min-height 1000px
+		col()
 		display flex
 		flex-flow column wrap
 		align-items center
 		justify-content center
+		margin 0 auto
 		&__h1
 			font(54px,Montserrat,bold,#000)
 			margin-top 50px
 			margin-bottom 15px
+			text-align center
 		.border
 			margin 15px
 			border-bottom: 10px solid $purple
@@ -118,10 +164,17 @@ footer
 			height 10px
 
 .box-container
-	display flex;
+	row-flex()
 	width 100%
+	justify-content center
+	text-align center
+	xs(flex-flow, column wrap)
 	.features-wrapper__box
-		col-4()
+		col-3()
+		col-md-6()
+		col-xs-12()
+		md(margin, 25px 10px)
+		xs(margin, 35px 15px)
 		display flex
 		flex-flow column wrap
 		justify-content center
@@ -131,12 +184,15 @@ footer
 		.features__box-text
 			text-align center
 			margin-top auto
-			width: 50%
+			width: 80%
 			font(32px,Montserrat,400,$gray)
 
 .features-wrapper__buttons
-	display flex
+	row-flex()
 	margin-top 80px
+	col()
+	sm(margin-top, 30px)
+	xs(justify-content, center)
 	&-button
 		border: 1px solid $blue
 		font(32px,Montserrat,400,$blue)
@@ -144,6 +200,13 @@ footer
 		margin 0 20px
 		padding: 15px 40px
 		border-radius 35px
+		text-align center
+		sm(padding, 15px 25px)
+		sm(margin, 10px)
+		sm(font-size, 25px)
+		xs(width, 260px)
+		&:last-child
+			xs(margin-bottom, 25px)
 		&:hover
 			background-color: $blue
 			color: #fff
@@ -158,14 +221,19 @@ footer
 		margin 0 auto
 		align-items center
 		justify-content space-around
+		xs(flex-flow, column wrap)
 		.stat__box
 			display flex
 			flex-flow column wrap
 			text-align center
+			md(margin, 25px)
 			&-number
 				font(96px,Montserrat,800,#8776b7);
+				md(font-size, 60px)
+				xs(font-size, 50px)
 			&-text
 				font(45px,Montserrat,400,#fff)
+				md(font-size, 36px)
 				margin: 5px
 			.border
 				width: 160px
@@ -182,22 +250,33 @@ footer
 		align-items center
 		justify-content center
 		height 350px
+		md(height, 200px)
 	&__text-h1
 		font(54px,Montserrat,700,#262626)
 	&__container
-		wrapper()
-		display flex
+		max-width 1220px
+		display: flex
+		justify-content center
+		flex-wrap wrap
 		margin 0 auto
 		min-height 700px
 		&-cards
-			width 380px
+			display: flex
+			flex-flow column wrap
+			min-width 380px
+			xs(min-width, 200px)
+			col-xs-12()
+			overflow hidden
 			height 438px
-			margin: 0 10px
+			xs(min-height, 438px)
+			margin: 10px
 			box-shadow 0 11px 18px 1px rgba(76, 76, 76, 0.16)
 			border-radius 8px
 			border 1px solid #ebebeb
 			background-color #ffffff
 			transition .2s
+			&:last-child
+				lg(margin-bottom, 30px)
 			&:hover
 				box-shadow 0 22px 63px 2px rgba(76, 76, 76, 0.29)
 				transform scaleX(1.05) scaleY(1.1)
@@ -230,20 +309,38 @@ footer
 	min-height 680px
 	&__text
 		wrapper()
-		display flex
+		row-flex()
+		col()
 		align-items center
 		flex-flow column
 		justify-content center
+		text-align center
 		height: 380px
+		md(height, 220px)
+		margin 0 auto !important
 	&__marks
+		margin 0 auto !important
 		wrapper()
-		display flex
+		row-flex()
+		col()
+		col-md-8()
+		col-sm-12()
+		xs(flex-flow, column wrap)
+		md(margin, 0 auto)
 		justify-content space-between
 		align-items center
 		margin-top 10px
 		.box
+			col-md-6()
+			col-xs-12()
+			xs(margin, 12px 0)
+			&:last-child
+				col-md-12()
+				xs(margin-bottom, 25px)
+			text-align center
 			&:nth-child(3)
 				margin-left 10px
+				xs(margin, 0)
 
 .subscribe
 	background-color: $purple
@@ -252,17 +349,26 @@ footer
 	display flex
 	align-items center
 	flex-flow column wrap
+	text-align center
 	&-text
 		font(32px,Montserrat,400,#fff)
 		margin-bottom 40px
+		col()
 	.button-subscribe
 		position relative
-		input
-			height 50px
-			width 715px
+		wrapper()
+		width: 714px
+		md(width, 80%)
+		input[type='email']
+			min-height 50px
+			position relative
+			width 100%
+			max-width 715px
 			border-radius 25px
 			padding-left: 50px
 			font(16px,Montserrat,300,#000)
+			xs(padding-left, 20px)
+			xxs(font-size, 13px)
 		.myButton
 			position absolute
 			background-color: $blue
@@ -271,10 +377,12 @@ footer
 			width 184px
 			border-radius 0 25px 25px 0
 			top 0px
-			right 0
+			right 0px
 			z-index 5
 			padding: 0
 			font(16px,Montserrat,300,#fff)
+			xxs(font-size, 13px)
+			sm(width, 30%)
 
 
 .firstFooter
@@ -289,22 +397,34 @@ footer
 		border-bottom: 1px solid rgba(255, 255, 255, .5)
 	&-socials
 		display flex
+		padding 0
+		xs(flex-flow, column wrap)
+		li
+			xxs(padding, 10px 0)
 		a
 			padding 0 20px
 			font-size: 24px
 			color #a3a1ac
+			transition .3s
+			&:hover
+				color #a3a1ac - 30%
 	&-logo
 		font(33px,Arial,bold,#fff)
 	.fwrapperTwo
-		height 220px
+		min-height 220px
 		wrapper()
-		display flex
+		row-flex()
+		col()
 		align-items center
+		margin 0 auto !important
 		justify-content space-between
 		.box
 			col-4()
 			row-flex()
+			col-xs-10()
+			xs(margin, 15px auto)
 			align-items center
+			justify-content center
 			.contacts
 				padding-left 15px
 			h2
@@ -321,6 +441,7 @@ footer
 	display flex
 	justify-content center
 	align-items center
+	text-align center
 	font(24px,Roboto,400,#3e3c4d)
 	a
 		color: #fff
