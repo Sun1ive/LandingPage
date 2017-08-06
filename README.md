@@ -1,2 +1,2 @@
 # LandingPage
-<h1> Another practice landing page </h1>
+<h1> Another test landing page </h1>
